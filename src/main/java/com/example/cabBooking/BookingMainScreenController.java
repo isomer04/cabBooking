@@ -58,7 +58,7 @@ public class BookingMainScreenController {
 
 //        ToDoDB.tasklist.addTask(task);
 
-        ToDoDB.bookingList.addTask(booking);
+        BookingDB.bookingList.addTask(booking);
         System.out.println(booking);
 
         refreshTaskListView();
@@ -77,9 +77,9 @@ public class BookingMainScreenController {
         toDoListView.getItems().clear();
 
 //        Booking[] allTaskArray = ToDoDB.bookingList.getTasklist();
-        Booking[] allBookingTaskArray = ToDoDB.bookingList.getTasklist();
+        Booking[] allBookingTaskArray = BookingDB.bookingList.getTasklist();
 
-        for (int i = 0; i < ToDoDB.bookingList.getCount(); i++) {
+        for (int i = 0; i < BookingDB.bookingList.getCount(); i++) {
             toDoListView.getItems().add(allBookingTaskArray[i]);
         }
 
@@ -91,7 +91,7 @@ public class BookingMainScreenController {
 
     @FXML
     void removeTaskHandler(ActionEvent event) {
-        ToDoDB.completedTasks.addTask(ToDoDB.bookingList.removeOldestTask());
+        BookingDB.completedTasks.addTask(BookingDB.bookingList.removeOldestTask());
         refreshTaskListView();
     }
 
@@ -101,7 +101,7 @@ public class BookingMainScreenController {
         System.out.println(selectedTask);
 
         try {
-            ToDoDB.completedTasks.addTask(ToDoDB.bookingList.removeTask(selectedTask));
+            BookingDB.completedTasks.addTask(BookingDB.bookingList.removeTask(selectedTask));
         } catch (NullPointerException n) {
             System.out.println("Please select a task");
         }
@@ -110,8 +110,8 @@ public class BookingMainScreenController {
 
     @FXML
     void clearAllTaskHandler(ActionEvent event) {
-        ToDoDB.bookingList.clearAllTasks();
-        System.out.println(ToDoDB.bookingList + "from clearAllTaskHandler");
+        BookingDB.bookingList.clearAllTasks();
+        System.out.println(BookingDB.bookingList + "from clearAllTaskHandler");
         refreshTaskListView();
     }
 

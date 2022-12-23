@@ -4,7 +4,6 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-//import com.sun.javafx.tk.quantum.PaintRenderJob;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,11 +14,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-
-
 public class UserLoginSignController {
     
-  @FXML
+    @FXML
     private AnchorPane paneLogin;
 
     @FXML
@@ -94,9 +91,7 @@ public class UserLoginSignController {
                             Scene scene = new Scene(root);
                             mainStage.setScene(scene);
                             mainStage.show();
-
                         } else {
-
                             invalidLogin.setText("Incorrect Username Or Password");
                             System.out.println("====================");
                             System.out.println(usernameLogin.getText());
@@ -111,7 +106,6 @@ public class UserLoginSignController {
                 for(User u: users) {
                     System.out.printf("[userName=%s, Password=%s, email=%s]\n", u.getName(), u.getPassword(), u.getEmail());
                 }
-
             } catch (Exception ex) {
                 ex.printStackTrace();
             } finally {
@@ -124,7 +118,6 @@ public class UserLoginSignController {
         }
     boolean count = true;
 
-    
     public void addUser(ActionEvent event) throws IOException {
         List<User> users = new ArrayList<User>();
 
@@ -142,12 +135,10 @@ public class UserLoginSignController {
             //2nd challenge
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("user.csv", true));
 
-
         while (count == true){
             bufferedWriter.append("Name, Password,  Email\n");
             count = false;
         }
-
 
         try {
                 for(User u: users) { //Big O(n)

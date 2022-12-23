@@ -14,8 +14,6 @@ public class BookingTaskQueue implements BookingQueue{
 
     @Override
     public void addTask(Booking booking) { // O(1)
-        // enqueueing - add it to the "back" of the queue
-
         // check capacity
         if (count < bookingList.length) { //
             bookingList[back % bookingList.length] = booking;
@@ -62,7 +60,6 @@ public class BookingTaskQueue implements BookingQueue{
             bookingList[front] = null;
             front++;
             count--;
-
             return booking;
         }
     }

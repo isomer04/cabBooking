@@ -20,12 +20,11 @@ public class Booking {
 
     @Override
     public String toString() {
-        return "Booking{" +
-                "from='" + from + '\'' +
-                ", to='" + to + '\'' +
-                ", date='" + date + '\'' +
-                ", time='" + time + '\'' +
-                ", passengers='" + passengers + '\'' +
-                '}';
+        return
+                "From = " + from  +
+                ", To = " + to  +
+                ", Date = " + date +
+                ", Time = " + time +
+                ", Passengers = " + passengers ;
     }
 }

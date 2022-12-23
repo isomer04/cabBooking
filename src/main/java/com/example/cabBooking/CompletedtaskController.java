@@ -13,9 +13,9 @@ public class CompletedtaskController {
         // and put it into the ListView object
 
         completedTasksListView.getItems().clear();
-        Booking[] allTaskArray = ToDoDB.completedTasks.getTasklist();
+        Booking[] allTaskArray = BookingDB.completedTasks.getTasklist();
 
-        for (int i = 0; i < ToDoDB.completedTasks.getCount(); i++) {
+        for (int i = 0; i < BookingDB.completedTasks.getCount(); i++) {
             completedTasksListView.getItems().add(allTaskArray[i]);
         }
     }
